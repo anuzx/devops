@@ -1,5 +1,5 @@
 import express from "express";
-import { prismaClient } from "db";
+import { prismaClient } from "db/client";
 
 const app = express();
 
@@ -24,7 +24,7 @@ app.post("/user", (req, res) => {
     return;
   }
 
-  prismaClient.user
+   prismaClient.user
     .create({
       data: {
         username,
